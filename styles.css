@@ -189,7 +189,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 80px 8% 80px;
+    padding: 80px 12% 80px;
     z-index: 1;
 }
 
@@ -319,7 +319,7 @@ section {
     z-index: 1;
 }
 
-.section-left {
+.section-left, .section-inner {
     max-width: 1160px;
     margin: 0 auto;
     padding: 96px 5%;
