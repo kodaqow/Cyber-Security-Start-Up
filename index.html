@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dosis:wght@200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 <!-- header -->
@@ -24,7 +25,7 @@
                           stroke-linejoin="round"/>
                 </svg>
             </div>
-            Cipher<span>Shield</span>
+            Caipher<span>Shield</span>
         </a>
 
         <ul class="nav-links" id="nav-links">
@@ -39,7 +40,7 @@
 </header>
 
 <!-- main -->
-<main>
+<main class="animate__animated animate__slideInUp">
     <!-- hero section -->
     <section id="home">
         <div class="hero-inner">
@@ -52,7 +53,7 @@
                 Proaktivní monitoring, penetrační testy a okamžitá reakce na incidenty – 24/7.
             </p>
 
-            <div class="hero-actions">
+            <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Získat ochranu</a>
                 <a href="#services" class="btn-ghost">Naše služby →</a>
             </div>
@@ -67,7 +68,7 @@
                     <div class="stat-label">Chráněných firem</div>
                 </div>
                 <div>
-                    <div class="stat-num">&lt;8 min</div>
+                    <div class="stat-num"><8 min</div>
                     <div class="stat-label">Reakční čas</div>
                 </div>
             </div>
@@ -322,26 +323,18 @@
                         </div>
                         <div class="form-group">
                             <label for="femail">Firemní email</label>
-                            <input type="email" id="femail" placeholder="jan@firma.cz" required>
+                            <input type="email" id="femail" placeholder="jan@seznam.cz" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="fcompany">Název firmy</label>
-                        <input type="text" id="fcompany" placeholder="Acme s.r.o.">
+                        <input type="text" id="fcompany" placeholder="SecureNet s.r.o.">
                     </div>
 
                     <div class="form-group">
                         <label for="fservice">Zájem o službu</label>
-                        <select id="fservice">
-                            <option value="">Vyberte...</option>
-                            <option>Penetrační testování</option>
-                            <option>SOC monitoring 24/7</option>
-                            <option>Incident Response</option>
-                            <option>Identity & Access Management</option>
-                            <option>Compliance & Audit (NIS2, GDPR)</option>
-                            <option>Komplexní ochrana</option>
-                        </select>
+                        <input type="text" id="fservice" placeholder="Penetrační testování...">
                     </div>
 
                     <div class="form-group">
@@ -358,7 +351,7 @@
 
 <!-- footer -->
 <footer>
-    <span class="footer-copy">© 2025 CipherShield s.r.o. – Všechna práva vyhrazena</span>
+    <span class="footer-copy">© 2026 CaipherShield s.r.o.</span>
     <ul class="footer-links">
         <li><a href="#">Ochrana soukromí</a></li>
         <li><a href="#">Obchodní podmínky</a></li>
