@@ -82,6 +82,7 @@ body {
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
+    margin: 4% auto;
 }
 
 /* header */
