@@ -64,7 +64,10 @@
     50% { opacity: 0.3; }
 }
 
-
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* parameters */
 * {
@@ -178,7 +181,7 @@ nav {
 .hero-visual {
     position: relative;
     width: 100%;
-    max-width: 420px;
+    width: 420px;
     height: auto;
     display: block;
     opacity: 0.6;
