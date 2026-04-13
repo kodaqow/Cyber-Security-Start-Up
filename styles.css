@@ -186,6 +186,7 @@ nav {
 #home {
     min-height: 100vh;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     padding: 80px 8% 80px;
@@ -194,7 +195,6 @@ nav {
 
 .hero-visual {
     position: relative;
-    width: 100%;
     width: 420px;
     height: auto;
     display: block;
