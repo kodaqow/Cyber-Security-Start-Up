@@ -319,7 +319,7 @@ section {
     z-index: 1;
 }
 
-.section-inner {
+.section-left {
     max-width: 1160px;
     margin: 0 auto;
     padding: 96px 5%;
@@ -343,7 +343,7 @@ section {
     margin-bottom: 16px;
 }
 
-.section-sub {
+.section-subscription {
     font-size: 16px;
     font-weight: 300;
     color: var(--text-muted);
@@ -420,7 +420,7 @@ section {
     letter-spacing: -0.02px;
 }
 
-.service-desc {
+.service-description {
     font-size: 14px;
     font-weight: 300;
     color: var(--text-muted);
@@ -428,7 +428,7 @@ section {
 }
 
 /* about us section */
-#o-nas {
+#about {
     background: var(--bg);
 }
 
