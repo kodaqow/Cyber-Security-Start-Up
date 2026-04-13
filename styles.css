@@ -132,7 +132,7 @@ nav {
 }
 
 .nav-links a {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--text-muted);
     text-decoration: none;
@@ -666,7 +666,7 @@ footer {
 }
 
 .footer-links a {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-muted);
     text-decoration: none;
     transition: color 0.2s;
