@@ -87,11 +87,25 @@ body {
     overflow-x: hidden;
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+            linear-gradient(rgba(0,229,192,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,229,192,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* header */
 nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: space-between;
