@@ -31,7 +31,7 @@
 /* === responsivity === */
 @media (max-width: 768px) {
 
-    /* ==================== NAVBAR (already perfect from last round) ==================== */
+    /* ==================== NAVBAR ==================== */
     nav {
         position: relative !important;
         padding: 16px 5% !important;
@@ -78,15 +78,16 @@
         display: none !important;
     }
 
-    /* ==================== HERO (already perfect) ==================== */
+    /* ==================== HERO ==================== */
     #home {
-        padding: 32px 5% 0 5% !important;
+        padding: 32px 5% 40px 5% !important;
         flex-direction: column;
         align-items: center;
         text-align: center;
         min-height: auto;
         justify-content: center;
         gap: 0;
+        background: var(--bg) !important;
     }
 
     .hero-visual {
@@ -148,7 +149,7 @@
         font-size: 11px;
     }
 
-    /* ==================== ABOUT SECTION – PYRAMID + IMAGE BELOW TEXT ==================== */
+    /* ==================== ABOUT ==================== */
     .about-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -162,7 +163,6 @@
         text-align: center;
     }
 
-    /* pyramid-style text (exactly like hero) */
     .section-tag {
         text-align: center;
         margin: 0 auto 13px;
@@ -173,8 +173,7 @@
         max-width: 100%;
     }
 
-    .section-subscription,
-    .section-sub {                    /* in case you used .section-sub in HTML */
+    .section-sub, .section-subscription {
         text-align: center;
         max-width: 100%;
         margin-bottom: 40px;
@@ -187,7 +186,7 @@
     }
 
     .values-list li {
-        text-align: left;             /* keep bullet alignment natural but whole block centered */
+        text-align: left;
         justify-content: flex-start;
     }
 
@@ -203,16 +202,103 @@
         border-radius: 8px;
     }
 
-    /* team grid already stacked – just make sure it's centered */
     .team-grid {
-        grid-template-columns: 1fr;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 16px;
-        justify-items: center;
+        max-width: 100%;
+        margin: 0 auto;
+        justify-items: stretch;
+    }
+
+    .team-card {
+        height: 100% !important;
+        text-align: left !important;
+        padding: 19px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .team-avatar {
+        margin-bottom: 13px;
+    }
+
+    .team-name {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        text-align: left;
+    }
+
+    .team-role {
+        font-size: 13px;
+        color: var(--text-dim);
+        text-align: left;
+    }
+
+    /* ==================== CONTACT – FINAL TWEAK (addresses left-aligned) ==================== */
+    .contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 48px;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact-info {
+        max-width: 420px;               /* keeps the whole block nicely centered */
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;             /* title stays centered */
+    }
+
+    .contact-info h3 {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .contact-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        text-align: left;               /* ← ADDRESSES + LABELS LEFT ALIGNED */
+        justify-content: flex-start;    /* pushes everything to the left side of the centered container */
+        margin-bottom: 24px;
+        width: 100%;
+    }
+
+    .contact-item-icon {
+        flex-shrink: 0;
+    }
+
+    .contact-item-label,
+    .contact-item-val {
+        text-align: left;               /* labels and values left-aligned */
+    }
+
+    .contact-form {
+        width: 100%;
         max-width: 420px;
         margin: 0 auto;
     }
 
-    /* ==================== OTHER SECTIONS (kept clean) ==================== */
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .form-group label {
+        text-align: left;               /* labels above inputs left-aligned */
+    }
+
+    .form-submit {
+        width: 100%;
+        align-self: center;
+    }
+
+    /* ==================== OTHER SECTIONS ==================== */
     .section-left,
     .section-inner {
         padding: 52px 5%;
