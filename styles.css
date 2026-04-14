@@ -34,7 +34,8 @@
     /* ==================== TASK 2: NAVBAR – SUPER COMPACT MOBILE VERSION ==================== */
     nav {
         padding: 14px 5% !important;           /* much tighter vertical space */
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         gap: 14px;
         align-items: center;
         background: rgba(5, 11, 18, 0.95);
