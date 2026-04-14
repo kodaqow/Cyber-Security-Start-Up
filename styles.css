@@ -15,88 +15,152 @@
 ::-webkit-scrollbar {
     width: 6px;
 }
-
 ::-webkit-scrollbar-track {
     background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--accent);
     border-radius: 20px;
     filter: brightness(0.5);
     transition: filter 0.3s ease;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     filter: brightness(1);
 }
 
-/* === responsivity === */
+/* === responsivity – MOBILE FIRST ENHANCEMENTS (max-width 768px) === */
 @media (max-width: 768px) {
 
-    #home {
-        padding: 100px 5% 60px;
+    /* ==================== TASK 2: NAVBAR – SUPER COMPACT MOBILE VERSION ==================== */
+    nav {
+        padding: 14px 5% !important;           /* much tighter vertical space */
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+        background: rgba(5, 11, 18, 0.95);
     }
 
-    h1 {
-        font-size: clamp(32px, 9vw, 44px);
+    .logo {
+        font-size: 19px !important;            /* smaller logo */
+        gap: 6px;
+    }
+    .logo-mark {
+        width: 27px;
+        height: 27px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column !important;     /* vertical stack as requested */
+        gap: 2px;
+        width: 100%;
+        max-width: 320px;
+        align-items: center;
+    }
+
+    .nav-links a {
+        font-size: 14.5px !important;          /* smaller, more natural text */
+        font-weight: 500;
+        letter-spacing: 0.4px;
+        padding: 11px 0;
+        text-align: center;
+        width: 100%;
+        border-radius: 4px;
+        transition: all 0.2s;
+    }
+
+    .nav-cta {
+        display: none !important;              /* CTA button completely disappears on mobile */
+    }
+
+    /* ==================== TASK 3: #HOME – HERO DIAGRAM GONE + CENTERED PYRAMID LAYOUT ==================== */
+    #home {
+        padding: 92px 5% 55px !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: auto;                      /* no forced full viewport on small screens */
+        justify-content: center;
+        gap: 32px;
+    }
+
+    .hero-visual {
+        display: none !important;              /* hero diagram on the right is completely removed */
+    }
+
+    .hero-left {
+        max-width: 100% !important;
+        width: 100%;
+        text-align: center;
     }
 
     .hero-badge {
-        font-size: 10px;
-        letter-spacing: 0.8px;
-        padding: 4px 10px;
+        font-size: 10.5px;
+        letter-spacing: 1px;
+        padding: 5px 12px;
+        margin-bottom: 24px;
+        display: inline-flex;
+    }
+
+    h1 {
+        font-size: clamp(29px, 8vw, 39px) !important;   /* noticeably smaller but still impactful */
+        line-height: 1.08;
+        margin-bottom: 18px;
     }
 
     .hero-description {
-        font-size: 15px;
+        font-size: 15.5px;
+        line-height: 1.65;
+        max-width: 100%;
+        margin-bottom: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .btn-1, .btn-2 {
         width: 100%;
         text-align: center;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
+        padding: 14px 24px;
+        font-size: 16px;
     }
 
     .hero-stats {
-        gap: 20px;
+        gap: 28px;
+        justify-content: center;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        flex-wrap: wrap;
     }
 
     .stat-number {
-        font-size: 22px;
+        font-size: 26px;
     }
-
     .stat-label {
         font-size: 11px;
     }
 
+    /* keep other existing mobile styles but make them cleaner */
     .section-left,
     .section-inner {
         padding: 52px 5%;
     }
-
     .service-card {
         padding: 24px 20px;
     }
-
     .team-grid {
         grid-template-columns: 1fr;
     }
-
-    .nav-links a {
-        font-size: 18px;
-        padding: 20px 5%;
-    }
-
     .footer-links {
         flex-direction: column;
         gap: 12px;
     }
-
     .footer-links a {
         font-size: 14px;
     }
@@ -104,14 +168,8 @@
 
 /* === keyframes, animations === */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* === parameters === */
@@ -120,31 +178,26 @@
     margin: 0;
     padding: 0;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: 'DM Sans', sans-serif;
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
 }
-
 body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image:
-            linear-gradient(rgba(0,229,192,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,229,192,0.03) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(0,229,192,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,192,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
     z-index: 0;
 }
 
-/* === header === */
+/* === header (desktop defaults) === */
 nav {
     position: fixed;
     top: 0;
@@ -159,7 +212,6 @@ nav {
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
 }
-
 .logo {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -171,28 +223,24 @@ nav {
     align-items: center;
     gap: 8px;
 }
-
 .logo-mark {
-    width: 32px; height: 32px;
+    width: 32px;
+    height: 32px;
     position: relative;
     flex-shrink: 0;
 }
-
 .logo-mark svg {
     width: 100%;
     height: 100%;
 }
-
 .logo span {
     color: var(--accent);
 }
-
 .nav-links {
     display: flex;
     gap: 32px;
     list-style: none;
 }
-
 .nav-links a {
     font-size: 15px;
     font-weight: 600;
@@ -202,11 +250,9 @@ nav {
     text-transform: uppercase;
     transition: color 0.2s;
 }
-
 .nav-links a:hover {
     color: var(--accent);
 }
-
 .nav-cta {
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
@@ -221,15 +267,13 @@ nav {
     letter-spacing: 0.5px;
     transition: background 0.2s, color 0.2s;
 }
-
 .nav-cta:hover {
     background: var(--accent);
     color: var(--bg);
 }
 
 /* === main === */
-
-/* hero section */
+/* hero section (desktop defaults) */
 #home {
     min-height: 100vh;
     display: flex;
@@ -239,7 +283,6 @@ nav {
     padding: 80px 5% 80px;
     z-index: 1;
 }
-
 .hero-visual {
     position: relative;
     max-width: 420px;
@@ -248,11 +291,9 @@ nav {
     opacity: 0.6;
     width: 100%;
 }
-
 .hero-left {
     max-width: 700px;
 }
-
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -267,7 +308,6 @@ nav {
     letter-spacing: 1.3px;
     animation: fadeUp 0.6s ease both;
 }
-
 h1 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
@@ -277,11 +317,9 @@ h1 {
     margin-bottom: 22px;
     animation: fadeUp 0.6s 0.1s ease both;
 }
-
 h1 .accent {
     color: var(--accent);
 }
-
 .hero-description {
     font-size: 18px;
     font-weight: 300;
@@ -291,14 +329,12 @@ h1 .accent {
     margin-bottom: 40px;
     animation: fadeUp 0.6s 0.2s ease both;
 }
-
 .hero-buttons {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
     animation: fadeUp 0.6s 0.3s ease both;
 }
-
 .btn-1 {
     padding: 13px 32px;
     background: var(--accent);
@@ -313,12 +349,10 @@ h1 .accent {
     transition: opacity 0.2s, transform 0.2s;
     letter-spacing: 0.2px;
 }
-
 .btn-1:hover {
     opacity: 0.88;
     transform: translateY(-3px);
 }
-
 .btn-2 {
     padding: 13px 32px;
     background: transparent;
@@ -332,12 +366,10 @@ h1 .accent {
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
-
 .btn-2:hover {
     border-color: var(--text);
     transform: translateY(-3px);
 }
-
 /* floating stats */
 .hero-stats {
     display: flex;
@@ -345,14 +377,12 @@ h1 .accent {
     margin-top: 64px;
     animation: fadeUp 0.6s 0.4s ease both;
 }
-
 .stat-number {
     font-family: 'Syne', sans-serif;
     font-size: 32px;
     font-weight: 700;
     color: var(--accent);
 }
-
 .stat-label {
     font-size: 13px;
     color: var(--text-dim);
@@ -366,14 +396,12 @@ section {
     position: relative;
     z-index: 1;
 }
-
 .section-left,
 .section-inner {
     max-width: 1160px;
     margin: 0 auto;
     padding: 96px 5%;
 }
-
 .section-tag {
     font-family: 'Share Tech Mono', monospace;
     font-size: 12px;
@@ -382,7 +410,6 @@ section {
     text-transform: uppercase;
     margin-bottom: 13px;
 }
-
 .section-title {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
@@ -391,7 +418,6 @@ section {
     line-height: 1.15;
     margin-bottom: 16px;
 }
-
 .section-subscription {
     font-size: 16px;
     font-weight: 300;
@@ -405,7 +431,6 @@ section {
 #services {
     background: var(--bg2);
 }
-
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -415,7 +440,6 @@ section {
     border-radius: 8px;
     overflow: hidden;
 }
-
 .service-card {
     background: var(--bg2);
     padding: 35px 32px;
@@ -423,27 +447,27 @@ section {
     position: relative;
     overflow: hidden;
 }
-
 .service-card::after {
     content: '';
     position: absolute;
-    bottom: 0; left: 0; right: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 2px;
     background: var(--accent);
     transform: scaleX(0);
     transition: transform 0.3s;
     transform-origin: left;
 }
-
 .service-card:hover {
     background: var(--bg3);
 }
 .service-card:hover::after {
     transform: scaleX(1);
 }
-
 .service-icon {
-    width: 44px; height: 44px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
     border: 1px solid var(--border);
     display: flex;
@@ -452,7 +476,6 @@ section {
     margin-bottom: 22px;
     background: var(--accent-dim);
 }
-
 .service-icon svg {
     width: 22px;
     height: 22px;
@@ -460,7 +483,6 @@ section {
     fill: none;
     stroke-width: 1.8;
 }
-
 .service-name {
     font-family: 'Syne', sans-serif;
     font-weight: 600;
@@ -468,7 +490,6 @@ section {
     margin-bottom: 11px;
     letter-spacing: -0.02px;
 }
-
 .service-description {
     font-size: 14px;
     font-weight: 300;
@@ -480,18 +501,15 @@ section {
 #about {
     background: var(--bg);
 }
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
 }
-
 .about-visual {
     position: relative;
 }
-
 .about-visual img {
     width: 100%;
     max-width: 480px;
@@ -499,19 +517,12 @@ section {
     border: 1px solid var(--border);
     display: block;
 }
-
-.about-diagram {
-    width: 100%;
-    max-width: 380px;
-}
-
 .team-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 38px;
 }
-
 .team-card {
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -519,13 +530,12 @@ section {
     background: var(--bg2);
     transition: border-color 0.2s;
 }
-
 .team-card:hover {
     border-color: var(--accent);
 }
-
 .team-avatar {
-    width: 42px; height: 42px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: linear-gradient(135deg, #00e5c040, #0080ff40);
     border: 1px solid var(--border);
@@ -538,26 +548,22 @@ section {
     color: var(--accent);
     margin-bottom: 13px;
 }
-
 .team-name {
     font-family: 'Syne', sans-serif;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 4px;
 }
-
 .team-role {
     font-size: 13px;
     color: var(--text-dim);
 }
-
 .values-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-
 .values-list li {
     display: flex;
     align-items: flex-start;
@@ -567,11 +573,11 @@ section {
     color: var(--text-dim);
     line-height: 1.6;
 }
-
 .values-list li::before {
     content: '';
     display: block;
-    width: 20px; height: 20px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
     margin-top: 2px;
     border-radius: 50%;
@@ -586,30 +592,27 @@ section {
 #contact {
     background: var(--bg2);
 }
-
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 80px;
     align-items: start;
 }
-
 .contact-info h3 {
     font-family: 'Syne', sans-serif;
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 24px;
 }
-
 .contact-item {
     display: flex;
     gap: 16px;
     align-items: flex-start;
     margin-bottom: 24px;
 }
-
 .contact-item-icon {
-    width: 36px; height: 36px;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -618,7 +621,6 @@ section {
     justify-content: center;
     background: var(--accent-dim);
 }
-
 .contact-item-icon svg {
     width: 16px;
     height: 16px;
@@ -626,7 +628,6 @@ section {
     fill: none;
     stroke-width: 1.8;
 }
-
 .contact-item-label {
     font-size: 13px;
     color: var(--text-dim);
@@ -634,38 +635,32 @@ section {
     letter-spacing: 1px;
     margin-bottom: 3px;
 }
-
 .contact-item-val {
     font-size: 15px;
     font-weight: 400;
 }
-
 /* form */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
-
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
-
 .form-group label {
     font-size: 13px;
     color: var(--text-dim);
     letter-spacing: 0.6px;
     text-transform: uppercase;
 }
-
 .form-group input,
 .form-group textarea,
 .form-group select {
@@ -680,22 +675,18 @@ section {
     transition: border-color 0.2s;
     -webkit-appearance: none;
 }
-
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: var(--accent);
 }
-
 .form-group textarea {
     min-height: 130px;
     resize: none;
 }
-
 .form-group select option {
     background: var(--bg3);
 }
-
 .form-submit {
     padding: 14px 35px;
     background: var(--accent);
@@ -710,7 +701,6 @@ section {
     transition: opacity 0.2s, transform 0.2s;
     letter-spacing: 0.3px;
 }
-
 .form-submit:hover {
     opacity: 0.88;
     transform: translateY(-1px);
@@ -728,25 +718,21 @@ footer {
     flex-wrap: wrap;
     gap: 16px;
 }
-
 .footer-copy {
     font-size: 13px;
     color: var(--text-dim);
 }
-
 .footer-links {
     display: flex;
     gap: 24px;
     list-style: none;
 }
-
 .footer-links a {
     font-size: 15px;
     color: var(--text-dim);
     text-decoration: none;
     transition: color 0.2s;
 }
-
 .footer-links a:hover {
     color: var(--accent);
 }
