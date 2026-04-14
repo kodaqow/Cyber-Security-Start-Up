@@ -11,6 +11,33 @@
     --border: rgba(0,229,192,0.18);
 }
 
+/* custom scrollbar */
+
+/* 1. The container (track) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* 2. The background of the scrollbar */
+::-webkit-scrollbar-track {
+    background: var(--bg);
+    border-left: 1px solid var(--border);
+}
+
+/* 3. The draggable handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--accent2), var(--accent));
+    border-radius: 10px;
+    border: 2px solid var(--bg);
+}
+
+/* 4. Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
 /* responsivity*/
 @media (max-width: 768px) {
     .hero-visual {
@@ -50,27 +77,6 @@
 }
 
 /* keyframes, animations */
-.hero-badge::before {
-    content: '';
-    display: inline-block;
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.3;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -102,7 +108,6 @@ body {
 
 body::before {
     content: '';
-    position: fixed;
     inset: 0;
     background-image:
             linear-gradient(rgba(0,229,192,0.03) 1px, transparent 1px),
@@ -223,7 +228,7 @@ nav {
     align-items: center;
     gap: 7px;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 13px;
     color: var(--accent);
     border: 1px solid var(--border);
     padding: 5px 13px;
@@ -321,7 +326,7 @@ h1 .accent {
 .stat-label {
     font-size: 13px;
     color: var(--text-dim);
-    margin-top: 0.1rem;
+    margin-top: 2px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -653,7 +658,7 @@ section {
 
 .form-group textarea {
     min-height: 130px;
-    resize: vertical;
+    resize: none;
 }
 
 .form-group select option {
