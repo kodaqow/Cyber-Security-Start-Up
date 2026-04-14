@@ -795,6 +795,7 @@ footer {
         max-width: 320px;
         margin: 0 auto;
         flex-wrap: wrap;
+        margin-top: 34px;
     }
 
     .stat-number {
