@@ -11,9 +11,9 @@
     --border: rgba(0,229,192,0.18);
 }
 
-/* custom scrollbar */
+/* customised scrollbar */
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -21,13 +21,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--text-dim);
+    background: var(--accent);
     border-radius: 20px;
-    transition: background 0.3s ease;
+    filter: brightness(0.5);
+    transition: filter 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
+    filter: brightness(1);
 }
 
 /* responsivity*/
@@ -169,7 +170,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: var(--text);
 }
 
 .nav-cta {
