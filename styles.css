@@ -13,7 +13,7 @@
 
 /* customised scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -21,14 +21,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent);
+    background: var(--text-dim);
     border-radius: 20px;
-    filter: brightness(0.5);
-    transition: filter 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    filter: brightness(1);
+    background: var(--accent);
 }
 
 /* responsivity*/
