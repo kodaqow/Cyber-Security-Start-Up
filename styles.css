@@ -1,4 +1,4 @@
-/* root */
+/* === root === */
 :root {
     --bg: #050b12;
     --bg2: #080f1a;
@@ -11,7 +11,7 @@
     --border: rgba(0,229,192,0.18);
 }
 
-/* customised scrollbar */
+/* === customised scrollbar === */
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -31,45 +31,78 @@
     filter: brightness(1);
 }
 
-/* responsivity*/
+/* === responsivity === */
 @media (max-width: 768px) {
-    .hero-visual {
-        display: none;
-    }
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-    .nav-cta {
-        display: none;
-    }
-}
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    #home {
+        padding: 100px 5% 60px;
     }
-    .hero-stats {
-        gap: 24px;
-        flex-wrap: wrap;
+
+    h1 {
+        font-size: clamp(32px, 9vw, 44px);
     }
-    .form-row {
-        grid-template-columns: 1fr;
+
+    .hero-badge {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        padding: 4px 10px;
     }
-    .team-grid {
-        grid-template-columns: 1fr 1fr;
+
+    .hero-description {
+        font-size: 15px;
     }
-    footer {
+
+    .btn-1, .btn-2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-buttons {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 22px;
+    }
+
+    .stat-label {
+        font-size: 11px;
+    }
+
+    .section-left,
+    .section-inner {
+        padding: 52px 5%;
+    }
+
+    .service-card {
+        padding: 24px 20px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        padding: 20px 5%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
     }
 }
 
-/* keyframes, animations */
+/* === keyframes, animations === */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -81,7 +114,7 @@
     }
 }
 
-/* parameters */
+/* === parameters === */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -111,7 +144,7 @@ body::before {
     z-index: 0;
 }
 
-/* header */
+/* === header === */
 nav {
     position: fixed;
     top: 0;
@@ -193,6 +226,8 @@ nav {
     background: var(--accent);
     color: var(--bg);
 }
+
+/* === main === */
 
 /* hero section */
 #home {
@@ -681,7 +716,7 @@ section {
     transform: translateY(-1px);
 }
 
-/* footer */
+/* === footer === */
 footer {
     border-top: 1px solid var(--border);
     padding: 40px 5%;
