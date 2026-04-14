@@ -13,7 +13,7 @@
 
 /* === customised scrollbar === */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
     background: transparent;
@@ -64,7 +64,7 @@
 
     .nav-links a {
         font-size: 13.5px !important;
-        font-weight: 500;
+        font-weight: 400;
         letter-spacing: 0.6px;
         padding: 7px 22px !important;
         text-align: right;
@@ -80,13 +80,13 @@
 
     /* ==================== HERO (already perfect) ==================== */
     #home {
-        padding: 32px 5% !important;
+        padding: 32px 5% 0 5% !important;
         flex-direction: column;
         align-items: center;
         text-align: center;
         min-height: auto;
         justify-content: center;
-        gap: 32px;
+        gap: 0;
     }
 
     .hero-visual {
@@ -324,7 +324,7 @@ nav {
 
 .nav-links a {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-dim);
     text-decoration: none;
     letter-spacing: 0.6px;
@@ -521,7 +521,7 @@ section {
     margin-bottom: 16px;
 }
 
-.section-subscription {
+.section-sub {
     font-size: 16px;
     font-weight: 300;
     color: var(--text-dim);
