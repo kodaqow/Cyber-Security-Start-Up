@@ -7,7 +7,7 @@
     --accent2: #0080ff;
     --accent-dim: rgba(0,229,192,0.12);
     --text: #e8f0f8;
-    --text-muted: #6b8096;
+    --text-dim: #6b8096;
     --border: rgba(0,229,192,0.18);
 }
 
@@ -151,7 +151,7 @@ nav {
 .nav-links a {
     font-size: 15px;
     font-weight: 500;
-    color: var(--text-muted);
+    color: var(--text-dim);
     text-decoration: none;
     letter-spacing: 0.6px;
     text-transform: uppercase;
@@ -189,13 +189,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 80px 12% 80px;
+    padding: 80px 8% 80px;
     z-index: 1;
 }
 
 .hero-visual {
     position: relative;
-    width: 420px;
+    max-width: 525px;
     height: auto;
     display: block;
     opacity: 0.6;
@@ -237,7 +237,7 @@ h1 .accent {
 .hero-description {
     font-size: 18px;
     font-weight: 300;
-    color: var(--text-muted);
+    color: var(--text-dim);
     line-height: 1.7;
     max-width: 520px;
     margin-bottom: 40px;
@@ -307,7 +307,7 @@ h1 .accent {
 
 .stat-label {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--text-dim);
     margin-top: 0.1rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -346,7 +346,7 @@ section {
 .section-subscription {
     font-size: 16px;
     font-weight: 300;
-    color: var(--text-muted);
+    color: var(--text-dim);
     max-width: 520px;
     line-height: 1.7;
     margin-bottom: 56px;
@@ -423,7 +423,7 @@ section {
 .service-description {
     font-size: 14px;
     font-weight: 300;
-    color: var(--text-muted);
+    color: var(--text-dim);
     line-height: 1.65;
 }
 
@@ -499,7 +499,7 @@ section {
 
 .team-role {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--text-dim);
 }
 
 .values-list {
@@ -515,7 +515,7 @@ section {
     gap: 14px;
     font-size: 15px;
     font-weight: 300;
-    color: var(--text-muted);
+    color: var(--text-dim);
     line-height: 1.6;
 }
 
@@ -580,7 +580,7 @@ section {
 
 .contact-item-label {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 3px;
@@ -612,7 +612,7 @@ section {
 
 .form-group label {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--text-dim);
     letter-spacing: 0.6px;
     text-transform: uppercase;
 }
@@ -682,7 +682,7 @@ footer {
 
 .footer-copy {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--text-dim);
 }
 
 .footer-links {
@@ -693,7 +693,7 @@ footer {
 
 .footer-links a {
     font-size: 15px;
-    color: var(--text-muted);
+    color: var(--text-dim);
     text-decoration: none;
     transition: color 0.2s;
 }
