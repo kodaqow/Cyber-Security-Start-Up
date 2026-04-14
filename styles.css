@@ -210,7 +210,7 @@ nav {
     align-items: center;
     gap: 7px;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 12.5px; /* Converted from 0.78rem */
     color: var(--accent);
     border: 1px solid var(--border);
     padding: 5px 13px;
@@ -308,7 +308,7 @@ h1 .accent {
 .stat-label {
     font-size: 13px;
     color: var(--text-dim);
-    margin-top: 0.1rem;
+    margin-top: 2px; /* Converted from 0.1rem (rounded) */
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -337,19 +337,24 @@ section {
 .section-title {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    font-size: clamp(30px, 60px, 45px);
+    font-size: clamp(30px, 45px, 60px);
     letter-spacing: -0.32px;
     line-height: 1.15;
     margin-bottom: 16px;
 }
 
-.section-subscription {
+.section-subscription, .section-sub {
     font-size: 16px;
     font-weight: 300;
     color: var(--text-dim);
     max-width: 520px;
     line-height: 1.7;
     margin-bottom: 56px;
+}
+
+/* Added specific fix for the About Us margin you had in rem */
+.section-sub {
+    margin-bottom: 32px !important; /* Converted from 2rem */
 }
 
 /* services section */
@@ -439,21 +444,12 @@ section {
     align-items: center;
 }
 
-.about-visual {
-    position: relative;
-}
-
 .about-visual img {
     width: 100%;
     max-width: 480px;
     border-radius: 8px;
     border: 1px solid var(--border);
     display: block;
-}
-
-.about-diagram {
-    width: 100%;
-    max-width: 380px;
 }
 
 .team-grid {
@@ -641,10 +637,6 @@ section {
 .form-group textarea {
     min-height: 130px;
     resize: vertical;
-}
-
-.form-group select option {
-    background: var(--bg3);
 }
 
 .form-submit {
