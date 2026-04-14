@@ -12,8 +12,9 @@
 }
 
 /* customised scrollbar */
+
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -21,13 +22,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--text-dim);
+    background: var(--accent);
     border-radius: 20px;
-    transition: background 0.3s ease;
+    filter: brightness(0.5);
+    transition: filter 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
+    filter: brightness(1);
 }
 
 /* responsivity*/
@@ -100,6 +102,7 @@ body {
 
 body::before {
     content: '';
+    position: fixed;
     inset: 0;
     background-image:
             linear-gradient(rgba(0,229,192,0.03) 1px, transparent 1px),
